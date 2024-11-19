@@ -48,7 +48,7 @@ public:
     }
 };
 
-// Класс для генерации массивов
+// ГЉГ«Г Г±Г± Г¤Г«Гї ГЈГҐГ­ГҐГ°Г Г¶ГЁГЁ Г¬Г Г±Г±ГЁГўГ®Гў
 class ArrayGenerator {
 public:
     static std::vector<int> generateRandomArray(int size, int minValue, int maxValue) {
@@ -88,10 +88,10 @@ public:
     }
 };
 
-// Гибридный алгоритм Merge + Insertion Sort
+// ГѓГЁГЎГ°ГЁГ¤Г­Г»Г© Г Г«ГЈГ®Г°ГЁГІГ¬ Merge + Insertion Sort
 class HybridMergeInsertionSort {
 private:
-    static const int threshold = 50; // Порог переключения на Insertion Sort
+    static const int threshold = 15; // ГЏГ®Г°Г®ГЈ ГЇГҐГ°ГҐГЄГ«ГѕГ·ГҐГ­ГЁГї Г­Г  Insertion Sort
 
     static void insertionSort(std::vector<int>& arr, int left, int right) {
         for (int i = left + 1; i <= right; ++i) {
@@ -147,7 +147,7 @@ public:
     }
 };
 
-// Класс для тестирования сортировок
+// ГЉГ«Г Г±Г± Г¤Г«Гї ГІГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГї Г±Г®Г°ГІГЁГ°Г®ГўГ®ГЄ
 class SortTester {
 public:
     static void testSort(
@@ -201,7 +201,7 @@ private:
 };
 
 int main() {
-    const int maxSize = 100000;
+    const int maxSize = 10000;
     const int repetitions = 5;
     const std::string outputFile = "sort_results.csv";
 
@@ -213,17 +213,17 @@ int main() {
     clearFile << "size,sort_name,array_type,average_time\n";
     clearFile.close();
 
-    // Тестирование Merge Sort
-    /*SortTester::testSort(randomArray, MergeSort::sort,
+    // Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ Merge Sort
+    SortTester::testSort(randomArray, MergeSort::sort,
         "Merge Sort", "random", repetitions, outputFile);
 
     SortTester::testSort(reversedArray, MergeSort::sort,
         "Merge Sort", "reversed", repetitions, outputFile);
 
     SortTester::testSort(nearlySortedArray, MergeSort::sort,
-        "Merge Sort", "nearly sorted", repetitions, outputFile);*/
+        "Merge Sort", "nearly sorted", repetitions, outputFile);
 
-    // Тестирование Merge+Insertion Sort
+    // Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ Merge+Insertion Sort
     SortTester::testSort(randomArray, HybridMergeInsertionSort::sort,
         "Hybrid Merge+Insertion Sort", "random", repetitions, outputFile);
 
